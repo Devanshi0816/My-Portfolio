@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  @apply bg-white text-black dark:bg-gray-950 dark:text-white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Section padding */
+section {
+  @apply py-16;
+}
+
+/* Container for layout with max width */
+.container {
+  @apply max-w-screen-xl mx-auto px-6;
+}
+
+/* Header styles */
+header {
+  @apply bg-gradient-to-r from-indigo-600 to-blue-500 py-6 text-white shadow-md;
+}
+
+/* Footer styles */
+footer {
+  @apply bg-gray-800 text-white py-4 text-center;
+}
+
+/* Card component styles */
+.card {
+  @apply bg-white rounded-lg shadow-lg p-6 transition-all duration-300 ease-in-out hover:scale-105;
+}
+
+.card h3 {
+  @apply text-2xl font-semibold mb-4;
+}
+
+.card p {
+  @apply text-gray-700;
+}
+
+/* Button styles */
+button {
+  @apply bg-indigo-600 text-white py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-indigo-700;
+}
+
+button:disabled {
+  @apply bg-gray-400 cursor-not-allowed;
+}
+
+/* Form input styles */
+input, textarea {
+  @apply border border-gray-300 rounded-lg p-4 mb-4 w-full focus:outline-none focus:ring-2 focus:ring-indigo-600;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4 {
+  @apply font-bold text-gray-900 dark:text-white;
+}
+
+/* Links */
+a {
+  @apply text-indigo-600 hover:text-indigo-800 transition-colors;
+}
+
+/* Image Styling */
+img {
+  @apply rounded-lg shadow-md object-cover;
+}
+
+/* Grid Layout */
+.grid-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6;
+}
+
+/* Custom padding for content */
+.content {
+  @apply py-12 px-6;
+}
+
+/* Modal Background */
+.modal-overlay {
+  @apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50;
+}
+
+/* Modal Box */
+.modal-content {
+  @apply max-w-lg mx-auto bg-white rounded-lg p-6 shadow-lg relative top-1/4;
+}
+@keyframes drop-down {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-drop-down {
+  animation: drop-down 0.5s ease-out forwards;
+}
